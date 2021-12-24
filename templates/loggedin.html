@@ -1,0 +1,274 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container-fluid  ">
+<div style="background-color: rgb(22, 28, 45);height:auto" class="container-fluid text-center mb-0"><h2  style="color:rgb(238, 179, 69)">SREE JAYABHERY COMMUNICATIONS</h2>
+ <h6 style="color:rgb(238, 179, 69)">Pallikonda,Bheemgal,Nizamabad,Telangana</h6><br></div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mt-0 ">
+        <a class="navbar-brand " href="#"><span class="h2 bg-info text-warning border border-warning rounded">J B C</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            
+          <ul class="navbar-nav ms-auto">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/"><mark class="btn btn-warning">Home</mark></a>
+              </li>
+              {% if user.is_authenticated %}
+             
+              <li class="nav-item">
+                <a class="nav-link" href="logout/"><mark class="btn btn-warning">Logout</mark></a>
+              </li>
+            {% else %}
+            <li class="nav-item active">
+              <a class="nav-link" href="/register"><mark class="btn btn-primary"> Register</mark> </a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="/login"><mark class="btn btn-success">Login</mark></a>
+            </li>
+           {% endif %}
+          </ul>
+         
+        </div>
+      </nav>
+
+    
+{% block content %}
+
+  
+  <div style="height: auto;" class=" mb-0 container-fluid h6  p-3  bg-secondary text-warning">
+<marquee behavior="scroll"> Hearty welcome to Jayabhery Communications</marquee>
+</div>
+
+{% if user.is_authenticated %}
+<div class="bg-secondary">
+
+  <p class="text-center"><span class="h2 bg-success text-warning">Listen to the top Telugu Songs </span></p>
+<br>
+<br>
+
+
+<div class="container mr-0 mb-4">
+  <div class="row  container grid">
+    
+    <div class=" col col-sm-12 col-lg-4 col-md-12 mb-3" >
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/srivalli.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h3 text-primary">Srivalli Song</h5>
+          <p class="card-text h4 text-center text-danger">Movie : Pushpa</p>
+          
+            <audio controls class="btn  container-fluid btn-primary" >
+              <source src="{%static 'songs\[iSongs.info] 02 - Srivalli.mp3' %}" type="audio/ogg">
+              
+            
+            </audio>
+       
+        </div>
+      </div>
+    </div>
+   
+    <div class="col col-sm-12 col-lg-4 col-md-12 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/eeraathale.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h3 text-primary">Ee Raathaale</h5>
+          <p class="card-text h4 text-center text-danger">Movie : RS</p>
+
+          <audio controls class="btn  container-fluid btn-primary" >
+            <source src="{%static 'songs\Ee Raathale.mp3' %}" type="audio/ogg">
+            
+          
+          </audio>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="col col-sm-12 col-lg-4 col-md-12 mb-0">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/Naatu.jpeg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h4 text-center text-primary">Naatu Song</h5>
+          <p class="card-text h4 text-center text-danger">Movie : RRR</p>
+
+          <audio controls class="btn  container-fluid btn-primary" >
+            <source src="{%static 'songs\Nattu Nattu.mp3' %}" type="audio/ogg">
+            
+          
+          </audio>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+<div class="container mr-0 mb-4">
+  <div class="row  container grid">
+    
+    <div class=" col col-sm-12 col-lg-4 col-md-12 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/srivalli.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h3 text-primary">Item Song</h5>
+          <p class="card-text h4 text-center text-danger">Movie : Pushpa</p>
+          
+            <audio controls class="btn  container-fluid btn-primary" >
+              <source src="{%static 'songs\Oo Antava Oo Oo Antava.mp3' %}" type="audio/ogg">
+              
+            
+            </audio>
+       
+        </div>
+      </div>
+    </div>
+   
+    <div class="col col-sm-12 col-lg-4 col-md-12 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/meb.jpeg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h3 text-primary">Lehraayi</h5>
+          <p class="card-text h4 text-center text-danger">Movie :MEB</p>
+
+          <audio controls class="btn  container-fluid btn-primary" >
+            <source src="{%static 'songs\Leharaayi.mp3' %}" type="audio/ogg">
+            
+          
+          </audio>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="col col-sm-12 col-lg-4 col-md-12 mb-0">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/Naatu.jpeg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h3 text-primary">Janani Song</h5>
+          <p class="card-text h4 text-center text-danger">Movie : RRR</p>
+
+          <audio controls class="btn  container-fluid btn-primary" >
+            <source src="{%static 'songs\Janani.mp3' %}" type="audio/ogg">
+            
+          
+          </audio>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container mr-0 mb-4">
+  <div class="row  container grid">
+    
+    <div class=" col col-sm-12 col-lg-4 col-md-12 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/srivalli.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h3 text-primary">Srivalli Song</h5>
+          <p class="card-text h4 text-center text-danger">Movie :Pushpa</p>
+          
+            <audio controls class="btn  container-fluid btn-primary" >
+              <source src="{%static 'songs\[iSongs.info] 02 - Srivalli.mp3' %}" type="audio/ogg">
+              
+            
+            </audio>
+       
+        </div>
+      </div>
+    </div>
+   
+    <div class="col col-sm-12 col-lg-4 col-md-12 mb-3">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/eeraathale.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h3 text-primary">Ee Raathaale</h5>
+          <p class="card-text h4 text-center text-danger">Movie: R S</p>
+
+          <audio controls class="btn  container-fluid btn-primary" >
+            <source src="{%static 'songs\Ee Raathale.mp3' %}" type="audio/ogg">
+            
+          
+          </audio>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="col col-sm-12 col-lg-4 col-md-12 mb-0">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-thumbnail rounded-circle " height="100px" width="auto" src="{%static 'customer/Naatu.jpeg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center h3 text-primary">Naatu Song</h5>
+          <p class="card-text h4 text-center text-danger">Movie: RRR</p>
+
+          <audio controls class="btn  container-fluid btn-primary" >
+            <source src="{%static 'songs\Nattu Nattu.mp3' %}" type="audio/ogg">
+            
+          
+          </audio>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+ 
+
+  <div ><h3 style="background-color:rgb(22, 28, 45)" class="text-center"><span class="text-warning"><marquee>Thank you</marquee></span></h3></div>
+
+</div>
+
+</div>
+
+</div>
+{% else %}
+<br>
+<br>
+<p class="container text-center text-center h3 text-primary"><span class="text-danger">****</span>  If new user (Register) Else (Login)  <span class="text-danger">****</span>I </p>
+
+{% endif %}
+ 
+     {% endblock content %}
+
+      
+   <p>
+   </p>
+
+  </div>
+</body>
+</html>

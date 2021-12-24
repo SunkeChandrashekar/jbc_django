@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+{% block content %}
+
+<div>
+<p  style="height: auto" class=" pt-4 mb-0 h2  text-center bg-secondary text-warning"><span style="border-radius: 7px;" class="bg-warning btn-outline-secondary p-1">Registration page</span></p>
+
+</div>
+
+<div> 
+  {% for message in messages%}
+  <p style="height: auto" class=" pt-4 mb-0 h2 text-center bg-secondary text-warning">
+  <span class="bg-success h4 btn-outline-light text-light">{{message}} </span> 
+  </p>
+
+  {% endfor%}
+
+</div>
+    <div style="height: auto" class="container-fluid d-flex align-items-center bg-secondary text-warning mt-0">
+    <form class="container justify-content-center " method="POST" action="">
+   
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name" class="h4 btn-outline-dark">Name</label>
+            <input type="text" class="form-control" required="required" name="name" id="name" size="50" placeholder="Name">
+          </div>
+
+          <div class="form-group">
+            <label for="mobno" class="h4 btn-outline-dark">mobile_no</label>
+            <input type="text" class="form-control" id="mobno" required="required" name="mobno" size="50" placeholder="mobileno">
+          </div>
+
+          <div class="form-group">
+            <label for="vil" class="h4 btn-outline-dark">village</label>
+            <input type="text" class="form-control" id="vil" required="required" name="vil" size="50" placeholder="village">
+          </div>
+   
+            <div class="form-group">
+      <label for="Password1" class="h4 btn-outline-dark">Password</label>
+      <input type="password" class="form-control" required="required" size="50" id="Password1" name="Password1"  placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="Password2" class="h4 btn-outline-dark"> Confirm Password</label>
+      <input type="password" class="form-control" size="50" required="required" id="Password2" name="Password2" placeholder="Confirm Password">
+    </div>
+
+    
+    
+   <p class="text-center"><button type="submit" style="width: 200px;"  class="btn btn-primary">Register</button></p> 
+  </form>
+
+ 
+  
+    </div>
+    
+   
+{% endblock content %}
